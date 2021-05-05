@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .item1 {
+        grid-area: header;
+        background-color: black;
+        color: white;
+      }
+      .item2 {
+        grid-area: menu;
+        background-color: tomato;
+        color: yellow;
+      }
+
+      .item3 {
+        grid-area: main;
+        background-color: yellow;
+        color: green;
+      }
+      .item4 {
+        grid-area: extra;
+        background-color: green;
+        color: white;
+      }
+
+      .item5 {
+        grid-area: hero;
+        background-color: rgb(202, 90, 39);
+        color: rgb(43, 30, 36);
+      }
+      .item6 {
+        grid-area: banner;
+        background-color: rgb(224, 213, 208);
+        color: rgb(231, 110, 167);
+      }
+      .item7 {
+        grid-area: footer;
+        background-color: grey;
+        color: rgb(83, 13, 48);
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-areas:
+          "header"
+          "menu"
+          "main"
+          "extra"
+          "hero"
+          "banner"
+          "footer";
+        grid-gap: 10px;
+        /* background-color: #2196f3; */
+        padding: 10px;
+        grid-template-rows: 1fr 2fr 2fr 1fr 2fr 1fr 1fr;
+      }
+
+      .grid-container > div {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 38px;
+      }
+
+      @media only screen and (max-width: 349px) {
+        .grid-container {
+          display: grid;
+          width: 100%;
+          grid-template-columns: 1fr 2fr 1fr;
+          grid-template-areas:
+            "header header header"
+            "menu menu main"
+            "menu menu main"
+            "menu extra main"
+            "hero hero banner"
+            "banner banner footer"
+            "footer footer footer";
+          /* grid-gap: 10px; */
+          background-color: #2196f3;
+          padding: 10px;
+          grid-template-rows: 1fr 2fr 2fr 1fr 2fr 1fr 1fr;
+        }
+      }
+      @media only screen and (max-width: 689px) {
+        .grid-container {
+          display: grid;
+          width: 100%;
+          grid-template-columns: 1fr 2fr 1fr;
+          grid-template-areas:
+            "header header header"
+            "menu menu main"
+            "menu main extra"
+            "menu main extra "
+            "hero hero banner"
+            "banner banner footer"
+            "footer footer footer";
+          /* grid-gap: 10px; */
+          background-color: #2196f3;
+          padding: 10px;
+          grid-template-rows: 1fr 2fr 2fr 1fr 2fr 1fr 1fr;
+        }
+      }
+      @media only screen and (min-width: 1000px) {
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+            "header header header header header header"
+            "menu main main main right right"
+            "menu footer footer footer footer footer";
+          grid-gap: 10px;
+          background-color: #2196f3;
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The grid-area Property</h1>
+
+    <div class="grid-container">
+      <div class="item1">Header</div>
+      <div class="item2">Menu</div>
+      <div class="item3">Main</div>
+      <div class="item4">Extra</div>
+      <div class="item5">Hero</div>
+      <div class="item6">Banner</div>
+      <div class="item7">Footer</div>
+    </div>
+  </body>
+</html>
